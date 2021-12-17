@@ -1,8 +1,9 @@
 let region = document.getElementById('region');
 let button = document.getElementById('ok');
+
+//button to search for a country or region
 button.addEventListener("click", function () {
     const requestURL = "https://api.openweathermap.org/data/2.5/weather?q="+ region.value +",&units=metric&APPID=200f15a460f2b4b6a04aabd17164ddb0";
-
     let temp = document.getElementById('temp');
     let min = document.getElementById('min');
     let max = document.getElementById('max');
@@ -11,11 +12,11 @@ button.addEventListener("click", function () {
     let hour = document.getElementById('hour');
     let title = document.getElementById('title');
     let precipitation = document.getElementById('precipitation');
-
     let xhr = new XMLHttpRequest();
     xhr.open("GET", requestURL);
     xhr.responseType = "json";
 
+    //condition to display the result
     xhr.onload = function () {
         if (xhr.status !== 200) {
             title.innerHTML = "Enter a valid city or country !";
@@ -28,8 +29,7 @@ button.addEventListener("click", function () {
         pressure.innerHTML = "Pressure " + xhr.response.main.pressure + " mbar";
         wind.innerHTML = "Wind " + xhr.response.wind.speed + " km/h";
         precipitation.innerHTML = xhr.response.weather[0].main;
-
-        console.log(xhr.response.weather[0].main)
+        startTime();
 
         if (xhr.response.weather[0].main === 'Clouds') {
             document.getElementById('clouds').style.display = "block";
@@ -57,6 +57,7 @@ button.addEventListener("click", function () {
         return i;
     }
 
+    //function to display the current time
     function startTime() {
         let date = new Date();
         let j = date.getDay();
@@ -79,8 +80,6 @@ button.addEventListener("click", function () {
             startTime();
         }, 1000);
     }
-
-    startTime();
 
     xhr.send();
 })
