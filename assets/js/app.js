@@ -8,9 +8,13 @@ xhr.onload = function () {
         console.log("Erreur");
         return;
     }
-    let response = xhr.response;
-    console.log(response);
+    let region = document.getElementById('region');
+    region.innerHTML = " " + xhr.response.sys.country + ", " + xhr.response.name;
+    let temp = document.getElementById('temp');
+    temp.innerHTML = xhr.response.main.temp + "°C";
 }
 
 xhr.send();
+
+
 
