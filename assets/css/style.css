@@ -57,7 +57,10 @@ h2 {
 }
 
 #days {
-    border: 0.1rem solid black;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #temperature {
@@ -147,11 +150,6 @@ h2 {
     background-image: url("../../img/cloud.png");
 }
 
-img {
-    width: 13.5rem;
-    height: 13.5rem;
-}
-
 #region {
     padding: 0.5rem;
     text-align: center;
@@ -165,11 +163,30 @@ img {
     padding: 0.2rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    margin-top: 0.5rem;
 }
 
 #ok:hover {
     transform: scale(0.8);
 }
+
+img {
+    width: 13.5rem;
+    height: 13.5rem;
+}
+
+#clouds {
+    display: none;
+}
+
+#snow {
+    display: none;
+}
+
+#clear {
+    display: none;
+}
+
 
 
 

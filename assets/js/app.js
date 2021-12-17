@@ -10,6 +10,7 @@ button.addEventListener("click", function () {
     let wind = document.getElementById('wind');
     let hour = document.getElementById('hour');
     let title = document.getElementById('title');
+    let precipitation = document.getElementById('precipitation');
 
     let xhr = new XMLHttpRequest();
     xhr.open("GET", requestURL);
@@ -17,7 +18,7 @@ button.addEventListener("click", function () {
 
     xhr.onload = function () {
         if (xhr.status !== 200) {
-            console.log("Erreur");
+            title.innerHTML = "Enter a valid city or country !";
             return;
         }
         title.innerHTML = " " + xhr.response.sys.country + ", " + xhr.response.name;
@@ -26,6 +27,27 @@ button.addEventListener("click", function () {
         max.innerHTML = "Max " + parseInt(xhr.response.main.temp_max) + "°C";
         pressure.innerHTML = "Pressure " + xhr.response.main.pressure + " mbar";
         wind.innerHTML = "Wind " + xhr.response.wind.speed + " km/h";
+        precipitation.innerHTML = xhr.response.weather[0].main;
+
+        console.log(xhr.response.weather[0].main)
+
+        if (xhr.response.weather[0].main === 'Clouds') {
+            document.getElementById('clouds').style.display = "block";
+            document.getElementById('snow').style.display = "none";
+            document.getElementById('clear').style.display = "none";
+        }
+
+        if (xhr.response.weather[0].main === 'Snow') {
+            document.getElementById('snow').style.display = "block";
+            document.getElementById('clouds').style.display = "none";
+            document.getElementById('clear').style.display = "none";
+        }
+
+        if (xhr.response.weather[0].main === 'Clear') {
+            document.getElementById('clear').style.display = "block";
+            document.getElementById('snow').style.display = "none";
+            document.getElementById('clouds').style.display = "none";
+        }
     }
 
     function checkTime(i) {
@@ -37,14 +59,21 @@ button.addEventListener("click", function () {
 
     function startTime() {
         let date = new Date();
+        let j = date.getDay();
+        let mT = date.getMonth();
+        let y = date.getFullYear();
         let h = date.getHours();
         let m = date.getMinutes();
         let s = date.getSeconds();
 
+        j = checkTime(j);
+        mT = checkTime(mT);
+        y = checkTime(y);
         h = checkTime(h);
         m = checkTime(m);
         s = checkTime(s);
 
+        document.getElementById('days').innerHTML = j + " " + mT + " " + y;
         hour.innerHTML = h + ":" + m + ":" + s;
         setTimeout(function () {
             startTime();
