@@ -17,6 +17,7 @@ h1 {
     text-align: center;
     margin: 2rem;
     text-decoration-line: underline;
+    color: black;
 }
 
 h2 {
@@ -185,6 +186,12 @@ img {
 
 #clear {
     display: none;
+}
+
+@media screen and (max-width: 500px){
+    #container {
+        width: 100%;
+    }
 }
 
 
