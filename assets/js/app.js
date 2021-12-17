@@ -1,4 +1,4 @@
-const requestURL = "https://api.openweathermap.org/data/2.5/weather?id=6438247&appid=d5954c9f84ba9828ba08747506755013";
+const requestURL = "https://api.openweathermap.org/data/2.5/weather?q=Chimay,be&units=metric&APPID=200f15a460f2b4b6a04aabd17164ddb0";
 let xhr = new XMLHttpRequest();
 xhr.open("GET", requestURL);
 xhr.responseType = "json";
