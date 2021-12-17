@@ -1,0 +1,46 @@
+{
+  "coord": {
+    "lon": 4.0535,
+    "lat": 50.0175
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 279.27,
+    "feels_like": 276.71,
+    "temp_min": 275.25,
+    "temp_max": 280.66,
+    "pressure": 1039,
+    "humidity": 90,
+    "sea_level": 1039,
+    "grnd_level": 1014
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 3.45,
+    "deg": 57,
+    "gust": 8.55
+  },
+  "clouds": {
+    "all": 7
+  },
+  "dt": 1639733833,
+  "sys": {
+    "type": 2,
+    "id": 2035195,
+    "country": "FR",
+    "sunrise": 1639726649,
+    "sunset": 1639755748
+  },
+  "timezone": 3600,
+  "id": 6438247,
+  "name": "Fourmies",
+  "cod": 200
+}
