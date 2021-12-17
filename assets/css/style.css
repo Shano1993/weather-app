@@ -21,6 +21,8 @@ h1 {
 
 h2 {
     font-size: 3rem;
+    text-align: center;
+    margin-top: 1.5rem;
 }
 
 #container {
@@ -32,10 +34,15 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    border-radius: 0.5rem;
+    border: 0.5rem solid black;
 }
 
 #head {
     padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #weather {
@@ -102,6 +109,9 @@ h2 {
 #img {
     width: 40%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #maxSize, #minSize {
@@ -129,6 +139,36 @@ h2 {
     text-align: center;
     font-size: 3rem;
     font-weight: bold;
+}
+
+#cloud {
+    width: 100%;
+    height: 75%;
+    background-image: url("../../img/cloud.png");
+}
+
+img {
+    width: 13.5rem;
+    height: 13.5rem;
+}
+
+#region {
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.34);
+    border: none;
+}
+
+#ok {
+    width: 20%;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#ok:hover {
+    transform: scale(0.8);
 }
 
 

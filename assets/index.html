@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Weather Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,7 +14,10 @@
 
         <div id="head">
 
-            <h2>Region :<span id="region"></span></h2>
+            <label for="region"></label><input type="text" id="region" placeholder="Enter your country or region">
+            <button id="ok">Enter</button>
+
+            <h2 id="title"></h2>
 
         </div>
 
@@ -33,7 +36,15 @@
                     <div class="block"><span id="precipitation"></span></div>
                 </div>
 
-                <div id="img">IMG</div>
+                <div id="img">
+
+                    <div id="cloud">
+
+                        <img src="../img/cloud.png" alt="cloud"/>
+
+                    </div>
+
+                </div>
 
                 <div class="minMax">
                     <div class="block" id="maxSize"><span id="max"></span></div>
